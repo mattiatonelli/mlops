@@ -1,6 +1,6 @@
 # Ignore the content of the following folders
 mlartifacts/*
 mlruns/*
-__pycache__/*
 logs/*
-.pyc*
+__pycache__/
+*.pyc
