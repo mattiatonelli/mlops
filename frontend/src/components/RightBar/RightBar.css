@@ -1,0 +1,15 @@
+@import '../../shared/colors/color.css';
+
+.right-bar {
+    flex-grow: 1; /* Grow to fill remaining space */
+    margin-left: 300px;
+    background-color: var(--background-color-1);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-bar.toggled {
+    margin-left: 100px;
+}

@@ -1,0 +1,24 @@
+@import '../../../shared/colors/color.css';
+
+.toggle-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-top: 20px
+}
+
+.toggle-button {
+    background-color: #ffffff;
+    color: #001965;
+    border-width: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background-color: #033eb4;
+    color: #ffffff;
+    border-width: 1px;
+    border-color: #ffffff;
+}

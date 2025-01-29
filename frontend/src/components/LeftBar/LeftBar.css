@@ -1,0 +1,17 @@
+@import '../../shared/colors/color.css';
+
+.left-bar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    height: 100vh;
+    width: 300px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.left-bar.toggled {
+    width: 100px;
+}
