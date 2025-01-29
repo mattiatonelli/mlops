@@ -1,0 +1,40 @@
+services:
+  backend_ml:
+    build: ./backend/ml
+    ports:
+      - "8000:8000"
+    volumes:
+      - $PWD/backend/ml/models:/app/models
+      - shared_volume:/app/models/
+    env_file:
+      - .env
+    depends_on:
+      - airflow-init
+
+  mlflow:
+    build: ./backend/tracking
+    ports:
+      - "5000:5000"
+    volumes:
+      - $PWD/backend/tracking/mlflow:/mlflow
+    env_file:
+      - .env
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/src:/frontend/src
+    depends_on:
+      - backend_ml
+
+volumes:
+  shared_volume:
+    driver: local
+    driver_opts:
+      type: "none"
+      o: "bind"
+      device: "$PWD/backend/ml/models"
+include:
+  - ./backend/pipeline/compose-pipeline.yaml
